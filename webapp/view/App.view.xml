@@ -1,0 +1,58 @@
+<mvc:View
+	controllerName="ToDo.controller.App"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:tnt="sap.tnt">
+	<App id="app">
+		<Page title="My App">
+			<Button
+				icon="sap-icon://sap-ui5"
+				text="Go!"
+				press=".onPress"
+				type="Emphasized"
+				class="sapUiSmallMargin"/>
+		</Page>
+		
+		<Page id="intro" title="Create Enterprise-ready Web Apps with Ease">
+			<content>
+				<Panel 	class="sapUiResponsiveMargin"
+						width="auto">
+					<l:BlockLayout background="Light">
+				
+						<l:BlockLayoutRow>
+							<l:BlockLayoutCell>
+								
+								<Input
+									value="{/toDoInput}"
+									description="What do you want to do?"
+									valueLiveUpdate="true"
+									width="60%"
+									submit=".onSave"/>
+								<Button
+									icon="sap-icon://sap-ui5"
+									text="save"
+									press=".onSave"
+									type="Emphasized"
+									class="sapUiSmallMargin"/>
+								
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+						
+						<l:BlockLayoutRow>
+							<l:BlockLayoutCell>
+								<FlexBox items="{/toDo}" direction="Column" wrap="Wrap" class="sapUiSmallMarginBottom">
+									<tnt:InfoLabel text="{}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+								</FlexBox>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+						
+					</l:BlockLayout>
+				</Panel>
+			</content>
+		</Page>
+	</App>
+</mvc:View>
