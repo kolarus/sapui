@@ -14,7 +14,7 @@ sap.ui.define([
          UIComponent.prototype.init.apply(this, arguments);
          // set data model
          this.setModel(new JSONModel({
-					toDoInput: "Walk the dog",
+         			toDoInput: "Walk the dog",
 					toDo: [
 						"Learn sapui5"
 					]
